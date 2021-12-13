@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { render } from "react-dom";
 import {
   BrowserRouter,
   Routes,
