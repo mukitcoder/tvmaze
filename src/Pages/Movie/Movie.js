@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -7,7 +8,7 @@ const Movie = () => {
   const [displayMovies, setDisplayMovies] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.tvmaze.com/search/shows?q=all")
+    fetch(`https://api.tvmaze.com/search/shows?q=all`)
       .then((res) => res.json())
       .then((data) => setMovies(data));
   }, []);
@@ -46,7 +47,7 @@ const Movie = () => {
                 <Card.Title>Language: {pd.show.language}</Card.Title>
                 <Card.Title>Genres: {pd.show.genres[0]} | {pd.show.genres[1]}</Card.Title>
               </Card.Body>
-              <Button>View Details</Button>
+              <Link to={`details/${pd.show.id}`} > <Button className="text-white text-decoration-none fw-bold w-100">View Details</Button></Link> 
             </Card>
           </Col>
         ))}
