@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import OrderPage from "./OrderPage/OrderPage";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -43,9 +43,8 @@ const DetailsPage = () => {
     const filteredBooks = books.filter((element, index) => {
       return element.movieName !== movieName;
     });
-    Swal.fire('Successfully Deleted')
-      setBooks(filteredBooks);
-      
+    Swal.fire("Successfully Deleted");
+    setBooks(filteredBooks);
   };
 
   // set data to localStorage
@@ -67,7 +66,7 @@ const DetailsPage = () => {
     setEmail("");
     setPhone("");
     setMovieName("");
-    handleClose()
+    handleClose();
     e.preventDefault();
   };
 
