@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Movie = () => {
   const [movies, setMovies] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [displayMovies, setDisplayMovies] = useState([]);
+  // const [displayMovies, setDisplayMovies] = useState([]);
 
   useEffect(() => {
     fetch(`https://api.tvmaze.com/search/shows?q=all`)
@@ -18,17 +18,22 @@ const Movie = () => {
     const matchedMovies = movies.filter((pd) =>
       pd.show.name.toLowerCase().includes(searchText.toLowerCase())
     );
-    setDisplayMovies(matchedMovies);
+    if(searchText === ""){
+      alert('plz write something')
+    }
+    else{
+      setMovies(matchedMovies);
+    }
     e.preventDefault();
   };
 
   return (
     <Container>
-      <Form className="d-flex justify-content-center my-5">
+      <Form className="d-flex justify-content-center py-5">
         <Form.Group className="me-2">
           <Form.Control
             type="text"
-            placeholder="Search For Tv Show"
+            placeholder="Search For Movies"
             onChange={(e) => setSearchText(e.target.value)}
           />
         </Form.Group>
@@ -37,7 +42,7 @@ const Movie = () => {
         </Button>
       </Form>
       <Row xs={1} md={3} className="g-4">
-        {displayMovies.map((pd) => (
+        {movies.map((pd) => (
           <Col key={pd.show.id}>
             <Card>
               <Card.Img variant="top" src={pd.show.image.medium} />

@@ -8,8 +8,9 @@ import {
 import Navigation from './Pages/Shared/Header/Navigation';
 import Home from './Pages/Home/Home';
 import DetailsPage from './Pages/DetailsPage/DetailsPage';
-import OrderPage from './Pages/DetailsPage/OrderPage/OrderPage';
 import NotFound from './Pages/NotFound/NotFound';
+import About from './Pages/About/About';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
       <Route path="/" element={<Home />}/>
         <Route path="home" element={<Home />} />
         <Route path="details/:id" element={<DetailsPage />}/>
-        <Route path="order" element={<OrderPage />}/>
+        <Route path="about" element={<About />}/>
         <Route path="*" element={<NotFound />}/>
     </Routes>
-  </BrowserRouter>,
+    <Footer/>
+  </BrowserRouter>
     </div>
   );
 }
