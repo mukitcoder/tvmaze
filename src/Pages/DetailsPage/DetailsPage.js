@@ -43,7 +43,7 @@ const DetailsPage = () => {
     const filteredBooks = books.filter((element, index) => {
       return element.movieName !== movieName;
     });
-    Swal.fire("Successfully Deleted");
+    Swal.fire("Successfully cancelled");
     setBooks(filteredBooks);
   };
 
@@ -162,7 +162,7 @@ const DetailsPage = () => {
           </div>
         )}
       </Col>
-      <Table striped bordered hover>
+      <Table striped bordered hover responsive>
         <OrderPage books={books} deleteBook={deleteBook} />
       </Table>
     </Container>

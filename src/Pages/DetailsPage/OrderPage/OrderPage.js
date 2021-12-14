@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 const OrderPage = ({ books, deleteBook }) => {
   return (
     <>
-      <thead>
+      <thead className="text-center">
         <tr>
           <th>#</th>
           <th>Name</th>
@@ -14,7 +14,7 @@ const OrderPage = ({ books, deleteBook }) => {
           <th>Action</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="text-center">
         {books.map((book, index) => (
           <tr key={book.movieName}>
             <td>{index + 1}</td>
@@ -23,7 +23,7 @@ const OrderPage = ({ books, deleteBook }) => {
             <td>{book.phone} </td>
             <td>{book.movieName} </td>
             <td>
-              <Button onClick={()=>deleteBook(book.movieName)}>Delete</Button>{" "}
+              <Button onClick={()=>deleteBook(book.movieName)} className="btn btn-danger">Cancel</Button>{" "}
             </td>
           </tr>
         ))}
