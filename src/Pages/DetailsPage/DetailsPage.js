@@ -150,7 +150,7 @@ const DetailsPage = () => {
         </Modal.Body>
       </Modal>
 
-      <Col md={12} xs={12}>
+      <Col lg={12} md={12} xs={12}>
         {books.length < 1 && (
           <div className="fs-1 text-danger fw-bold text-center py-4">
             No ticket are booked yet !{" "}

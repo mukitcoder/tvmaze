@@ -41,7 +41,7 @@ const Movie = () => {
           Search
         </Button>
       </Form>
-      <Row xs={1} md={3} className="g-4">
+      <Row xs={1} md={3} lg={3} className="g-4">
         {movies.map((pd) => (
           <Col key={pd.show.id}>
             <Card>
