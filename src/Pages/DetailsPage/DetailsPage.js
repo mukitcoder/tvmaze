@@ -12,6 +12,7 @@ import {
 import { useParams } from "react-router-dom";
 import OrderPage from "./OrderPage/OrderPage";
 import Swal from "sweetalert2";
+import Rating from "react-rating";
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -87,10 +88,17 @@ const DetailsPage = () => {
           </Col>
           <Col md={8}>
             <Card.Body>
-              <Card.Title>{details?.name} </Card.Title>
-              <p className="card-text">{details?.summary}</p>
+              <Card.Title className="fs-2">{details?.name} </Card.Title>
+              <p className="card-text lead">{details?.summary}</p>
             </Card.Body>
-            <Button onClick={handleShow}>Book Movie Ticket</Button>
+            <Rating className="text-warning"
+  emptySymbol="fa fa-star-o fa-2x"
+  fullSymbol="fa fa-star fa-2x"
+  start={0}
+  stop={10}
+  initialRating={details?.rating?.average} readonly
+/> <span className="fs-4">({details?.rating?.average})</span> <br />
+            <Button onClick={handleShow} className="mt-5">Book Movie Ticket</Button>
           </Col>
         </Row>
       </Card>

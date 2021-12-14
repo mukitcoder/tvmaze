@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -19,7 +20,7 @@ const Movie = () => {
       pd.show.name.toLowerCase().includes(searchText.toLowerCase())
     );
     if(searchText === ""){
-      alert('plz write something')
+      Swal.fire("Please write something !!!");
     }
     else{
       setMovies(matchedMovies);
