@@ -91,14 +91,19 @@ const DetailsPage = () => {
               <Card.Title className="fs-2">{details?.name} </Card.Title>
               <p className="card-text lead">{details?.summary}</p>
             </Card.Body>
-            <Rating className="text-warning"
-  emptySymbol="fa fa-star-o fa-2x"
-  fullSymbol="fa fa-star fa-2x"
-  start={0}
-  stop={10}
-  initialRating={details?.rating?.average} readonly
-/> <span className="fs-4">({details?.rating?.average})</span> <br />
-            <Button onClick={handleShow} className="mt-5">Book Movie Ticket</Button>
+            <Rating
+              className="text-warning"
+              emptySymbol="fa fa-star-o fa-2x"
+              fullSymbol="fa fa-star fa-2x"
+              start={0}
+              stop={10}
+              initialRating={details?.rating?.average}
+              readonly
+            />{" "}
+            <span className="fs-4">({details?.rating?.average})</span> <br />
+            <Button onClick={handleShow} className="mt-5">
+              Book Movie Ticket
+            </Button>
           </Col>
         </Row>
       </Card>
@@ -106,7 +111,7 @@ const DetailsPage = () => {
       {/* Modal Start from here */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Booking Your Ticket Now!</Modal.Title>
+          <Modal.Title className="mx-auto">Booking Your Ticket Now!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {/* Form Start */}
@@ -151,7 +156,7 @@ const DetailsPage = () => {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className="w-100 fw-bold">
               Submit
             </Button>
           </Form>
