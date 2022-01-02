@@ -46,7 +46,7 @@ const Movie = () => {
         {movies.map((pd) => (
           <Col key={pd.show.id}>
             <Card>
-              <Card.Img variant="top" src={pd.show.image.medium} />
+              <Card.Img variant="top" src={pd.show.image?.medium} />
               <Card.Body>
                 <Card.Title className="fs-2">{pd.show.name}</Card.Title>
                 <Card.Title>Show Type: {pd.show.type}</Card.Title>
